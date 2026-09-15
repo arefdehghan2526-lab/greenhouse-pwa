@@ -1,0 +1,200 @@
+```html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#0f766e"
+  >
+
+  <meta
+    name="description"
+    content="مدیریت اطلاعات EC و pH گلخانه"
+  >
+
+  <title>مدیریت گلخانه</title>
+
+  <!-- PWA Manifest -->
+  <link
+    rel="manifest"
+    href="manifest.json"
+  >
+
+  <!-- آیکون مرورگر -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="icons/icon-192.png"
+  >
+
+  <!-- آیکون موبایل -->
+  <link
+    rel="apple-touch-icon"
+    href="icons/apple-touch-icon.png"
+  >
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+      font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+      background: #f4f7f6;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: min(92%, 520px);
+      text-align: center;
+    }
+
+    .app-icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 28px;
+      object-fit: cover;
+      box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.15);
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      color: #173b36;
+      font-size: 30px;
+    }
+
+    p {
+      margin: 0 0 30px;
+      color: #61736f;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .open-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 14px;
+      background: #0f766e;
+      color: white;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow:
+        0 8px 20px rgba(15, 118, 110, 0.25);
+    }
+
+    .open-button:hover {
+      opacity: 0.92;
+    }
+
+    .status {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #7b8a87;
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <main class="container">
+
+    <img
+      class="app-icon"
+      src="icons/icon-192.png"
+      alt="آیکون مدیریت گلخانه"
+    >
+
+    <h1>
+      مدیریت گلخانه
+    </h1>
+
+    <p>
+      ثبت و مدیریت اطلاعات EC و pH بسترهای کشت
+    </p>
+
+    <a
+      class="open-button"
+      href="PASTE_YOUR_GAS_URL_HERE"
+    >
+      ورود به برنامه
+    </a>
+
+    <div class="status">
+      نسخه وب‌اپ گلخانه
+    </div>
+
+  </main>
+
+
+  <script>
+
+    if ("serviceWorker" in navigator) {
+
+      window.addEventListener(
+        "load",
+        function() {
+
+          navigator.serviceWorker
+            .register("./service-worker.js")
+            .then(function() {
+
+              console.log(
+                "Service Worker registered."
+              );
+
+            })
+            .catch(function(error) {
+
+              console.error(
+                "Service Worker registration failed:",
+                error
+              );
+
+            });
+
+        }
+      );
+
+    }
+
+  </script>
+
+</body>
+
+</html>
+```
